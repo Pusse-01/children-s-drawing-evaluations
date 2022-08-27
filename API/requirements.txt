@@ -1,0 +1,8 @@
+matplotlib
+numpy
+opencv_python
+Pillow
+streamlit
+fastapi
+uvicorn
+python-multipart
