@@ -37,5 +37,13 @@ if img1_file and img2_file and submit is not None:
     # st.image(res, caption='Differences between two images')
     # --- find percentage difference based on number of pixels that are not zero ---
     percentage = (np.count_nonzero(res) * 100) / res.size
-    st.write("Difference: ", percentage, " %")
+    st.write("Score: ", (100 - percentage), " %")
+    level = ''
+    if percentage >= 70.0:
+        level += 'Low'
+    elif percentage <70.0 and percentage >30.0:
+        level += 'Medium'
+    elif percentage <= 30.0:
+        level += 'High'
+    st.write(level)
     delete_img()
